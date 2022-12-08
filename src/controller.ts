@@ -9,7 +9,7 @@ export const RiderLocation = (request: any, response: any) => {
       errorMessage: "Missing Parameters"
     })
   }
-  const riderId = request.query.rider_id
+  const riderId = request.params.rider_id
   const riderLocationHistory = RidersLocationHistoryTable.get(riderId)
   if(!riderLocationHistory) {
     RidersLocationHistoryTable.set(riderId,[{ lat: riderLat,long: riderLong}])
@@ -28,7 +28,7 @@ export const RiderLocation = (request: any, response: any) => {
 export const RiderLocations = (request: any, response: any) => {
   const DEFAULT_MAX_RESULT = 1
   const max = request.query.max ?? DEFAULT_MAX_RESULT
-  const riderId = request.query.rider_id
+  const riderId = request.params.rider_id
 
   const riderLocationHistory = RidersLocationHistoryTable.get(riderId)
   if (!riderLocationHistory) {

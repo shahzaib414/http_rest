@@ -9,6 +9,6 @@ app.use(router);
 
 export const RidersLocationHistoryTable = new Map<string, LocationProperties[]>()
 
-app.listen(8081, function () {
+app.listen(process.env.PORT, function () {
   console.log('app listening on port 8081!')
 })

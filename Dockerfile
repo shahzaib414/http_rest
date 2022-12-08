@@ -3,3 +3,6 @@ WORKDIR /http_rest
 COPY package.json /http_rest
 RUN npm install && npm cache clean --force
 COPY . /http_rest
+
+ENV PORT=$PORT
+EXPOSE $PORT
