@@ -1,6 +1,6 @@
 version: '2'
 services:
-  http_server:
+  http_rest:
     build: .
     command: npm run build
     ports:
