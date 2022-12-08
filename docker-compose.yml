@@ -1,0 +1,7 @@
+version: '2'
+services:
+  http_server:
+    build: .
+    command: npm run build
+    ports:
+      - "8081:8081"
