@@ -1,5 +1,5 @@
 FROM node:12-alpine3.14
-WORKDIR /http_server
-COPY package.json package-lock.json /http_server
+WORKDIR /http_rest
+COPY package.json package-lock.json /http_rest
 RUN npm ci && npm cache clean --force
-COPY . /http_server
+COPY . /http_rest
